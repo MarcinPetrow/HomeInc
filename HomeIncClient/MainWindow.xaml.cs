@@ -7,6 +7,7 @@ using HomeIncClient.Views.Transactions;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
+using HomeIncClient.Views.Categories;
 
 namespace HomeIncClient
 {
@@ -57,8 +58,12 @@ namespace HomeIncClient
 			var routingList = Routing.Instance.List;
 			routingList.AddRoute(RoutePaths.Root, typeof(TransactionsList), typeof(TransactionsViewModel));
 			routingList.AddRoute(RoutePaths.NewTransactionPath, typeof(TransactionNew), typeof(TransactionsViewModel));
-			routingList.AddRoute(RoutePaths.AboutPath, typeof(About), null);
-		}
+            routingList.AddRoute(RoutePaths.AboutPath, typeof(About), null);
+
+            routingList.AddRoute(RoutePaths.CategoriesPath, typeof(CategoriesList), typeof(CategoriesViewModel));
+            routingList.AddRoute(RoutePaths.NewCategoryPath, typeof(CategoriesNew), typeof(CategoriesViewModel));
+            routingList.AddRoute(RoutePaths.EditCategoryPath, typeof(CategoriesEdit), typeof(CategoriesViewModel));
+        }
 
 		#region Daraggable
 

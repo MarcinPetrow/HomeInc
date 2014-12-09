@@ -82,9 +82,19 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Repositories\TransactionsRepository.cs" />
+    <Compile Include="ViewModels\CategoriesViewModel.cs" />
     <Compile Include="ViewModels\TransactionsViewModel.cs" />
     <Compile Include="Views\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Categories\CategoriesEdit.xaml.cs">
+      <DependentUpon>CategoriesEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Categories\CategoriesList.xaml.cs">
+      <DependentUpon>CategoriesList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Categories\CategoriesNew.xaml.cs">
+      <DependentUpon>CategoriesNew.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Transactions\TransactionNew.xaml.cs">
       <DependentUpon>TransactionNew.xaml</DependentUpon>
@@ -110,6 +120,18 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Categories\CategoriesEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Categories\CategoriesList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Categories\CategoriesNew.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
