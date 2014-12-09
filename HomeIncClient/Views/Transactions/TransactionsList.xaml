@@ -1,0 +1,50 @@
+﻿<ui:View x:Class="HomeIncClient.Views.Transactions.TransactionsList"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:ui="clr-namespace:HomeIncClient.Core.UI"
+         xmlns:models="clr-namespace:HomeIncClient.Models">
+    <DockPanel>
+        <Button DockPanel.Dock="Bottom" Command="{Binding RouteNewCommand}" CommandParameter="/tansaction/new"
+                Margin="2,10,2,10">
+            Add new
+        </Button>
+        <ListView ItemsSource="{Binding Transactions}" Margin="2,10,2,10">
+
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="{x:Null}" />
+                            <Setter Property="BorderBrush" Value="{x:Null}" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.ItemTemplate>
+                <DataTemplate DataType="models:Transaction">
+                    <DockPanel Background="#e3e2db" Height="55">
+                        <DockPanel DockPanel.Dock="Left" Height="55" Width="55">
+                            <Rectangle DockPanel.Dock="Right" Margin="2" Height="44" HorizontalAlignment="Center"
+                                       Width="1" Fill="#c8ab37" />
+                            <StackPanel>
+                                <TextBlock HorizontalAlignment="Center" FontWeight="Bold"
+                                           Text="{Binding CreatedAt.Day}" Foreground="#483e37" />
+                                <TextBlock HorizontalAlignment="Center" FontWeight="Bold"
+                                           Text="{Binding CreatedAt.Month}" Foreground="#c8ab37" />
+                            </StackPanel>
+                        </DockPanel>
+                        <Grid DockPanel.Dock="Right" Width="55" Height="55">
+                            <TextBlock VerticalAlignment="Center" FontWeight="Bold"
+                                       HorizontalAlignment="Center" Text="{Binding Value}"
+                                       Foreground="#aa4400" />
+                        </Grid>
+                        <TextBlock VerticalAlignment="Center" FontWeight="Bold" Text="{Binding Description}"
+                                   Foreground="#483e37" />
+                    </DockPanel>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </DockPanel>
+</ui:View>

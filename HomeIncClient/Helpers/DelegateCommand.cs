@@ -1,0 +1,68 @@
+﻿using System;
+using System.Windows.Input;
+using HomeIncClient.Core;
+
+namespace HomeIncClient.Helpers
+{
+    public class RouteCommand : ICommand
+    {
+        private readonly string _routingPath;
+        private readonly ViewModel _customViewModel;
+
+        public RouteCommand(string path, ViewModel customViewModel = null)
+        {
+            _routingPath = path;
+            _customViewModel = customViewModel;
+        }
+
+        public event EventHandler CanExecuteChanged;
+
+        public bool CanExecute(object parameter)
+        {
+            return true;
+        }
+
+        public void Execute(object parameter)
+        {
+            Routing.Instance.Route(_routingPath);
+        }
+    }
+
+    public class DelegateCommand : ICommand
+    {
+        private readonly Predicate<object> _canExecute;
+        private readonly Action _execute;
+
+        public DelegateCommand(Action execute)
+            : this(execute, null)
+        {
+        }
+
+        public DelegateCommand(Action execute,
+            Predicate<object> canExecute)
+        {
+            _execute = execute;
+            _canExecute = canExecute;
+        }
+
+        public event EventHandler CanExecuteChanged;
+
+        public bool CanExecute(object parameter)
+        {
+            return _canExecute == null || _canExecute(parameter);
+        }
+
+        public void Execute(object parameter)
+        {
+            _execute();
+        }
+
+        public void RaiseCanExecuteChanged()
+        {
+            if (CanExecuteChanged != null)
+            {
+                CanExecuteChanged(this, EventArgs.Empty);
+            }
+        }
+    }
+}
