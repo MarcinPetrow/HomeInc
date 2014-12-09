@@ -51,8 +51,7 @@ namespace HomeIncClient
 		{
 			get { return _routeAboutCommand ?? (_routeAboutCommand = new RouteCommand(RoutePaths.AboutPath)); }
 		}
-
-
+        
 		public void AddRoutingPaths()
 		{
 			var routingList = Routing.Instance.List;

@@ -4,9 +4,9 @@ namespace HomeIncClient.Views.Transactions
 	/// <summary>
 	///     Interaction logic for TransactionNew.xaml
 	/// </summary>
-	public partial class TransactionNew
+	public partial class TransactionsNew
 	{
-		public TransactionNew()
+        public TransactionsNew()
 		{
 			InitializeComponent();
 		}

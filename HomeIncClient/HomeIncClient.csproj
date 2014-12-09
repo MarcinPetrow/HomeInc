@@ -96,8 +96,11 @@
     <Compile Include="Views\Categories\CategoriesNew.xaml.cs">
       <DependentUpon>CategoriesNew.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Transactions\TransactionNew.xaml.cs">
-      <DependentUpon>TransactionNew.xaml</DependentUpon>
+    <Compile Include="Views\Transactions\TransactionsNew.xaml.cs">
+      <DependentUpon>TransactionsNew.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Transactions\TransactionsEdit.xaml.cs">
+      <DependentUpon>TransactionsEdit.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Transactions\TransactionsList.xaml.cs">
       <DependentUpon>TransactionsList.xaml</DependentUpon>
@@ -135,7 +138,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Transactions\TransactionNew.xaml">
+    <Page Include="Views\Transactions\TransactionsNew.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Transactions\TransactionsEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
