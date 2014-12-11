@@ -1,13 +1,13 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <CornerRadius x:Key="ControlCornerRadius" BottomLeft="3" BottomRight="3" TopLeft="3" TopRight="3"/>
-    
-    <Style TargetType="Border" x:Key="DefaultContentBorder">
-        <Setter Property="BorderBrush" Value="{StaticResource ControlBorderColor}"/>
+    <CornerRadius x:Key="ControlCornerRadius" BottomLeft="3" BottomRight="3" TopLeft="3" TopRight="3" />
 
-        <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="Margin" Value="3"/>
-        <Setter Property="CornerRadius" Value="{StaticResource ControlCornerRadius}"/>
+    <Style x:Key="DefaultContentBorder" TargetType="Border">
+        <Setter Property="BorderBrush" Value="{StaticResource ControlBorderColor}" />
+
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Margin" Value="3" />
+        <Setter Property="CornerRadius" Value="{StaticResource ControlCornerRadius}" />
     </Style>
 </ResourceDictionary>

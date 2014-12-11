@@ -1,11 +1,11 @@
 ﻿<ui:View x:Class="HomeIncClient.Views.Transactions.TransactionsList"
          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-         xmlns:ui="clr-namespace:HomeIncClient.Core.UI"
-         xmlns:models="clr-namespace:HomeIncClient.Models">
+         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:models="clr-namespace:HomeIncClient.Models"
+         xmlns:ui="clr-namespace:HomeIncClient.Core.UI">
     <DockPanel>
-        <Button DockPanel.Dock="Bottom" Command="{Binding RouteNewCommand}" CommandParameter="/tansaction/new"
-                Margin="0,10,0,0">
+        <Button Margin="0,10,0,0"
+                Command="{Binding RouteNewCommand}"
+                CommandParameter="/tansaction/new" DockPanel.Dock="Bottom">
             Add new
         </Button>
         <ListView ItemsSource="{Binding Transactions}">
@@ -23,24 +23,24 @@
             </ListView.ItemContainerStyle>
             <ListView.ItemTemplate>
                 <DataTemplate DataType="models:Transaction">
-                    <DockPanel Background="#e3e2db" Height="55">
-                        <DockPanel DockPanel.Dock="Left" Height="55" Width="55">
-                            <Rectangle DockPanel.Dock="Right" Margin="2" Height="44" HorizontalAlignment="Center"
-                                       Width="1" Fill="#c8ab37" />
+                    <DockPanel Height="55" Background="#e3e2db">
+                        <DockPanel Width="55" Height="55" DockPanel.Dock="Left">
+                            <Rectangle Width="1" Height="44" Margin="2" HorizontalAlignment="Center"
+                                       DockPanel.Dock="Right" Fill="#c8ab37" />
                             <StackPanel>
-                                <TextBlock HorizontalAlignment="Center" FontWeight="Bold"
-                                           Text="{Binding CreatedAt.Day}" Foreground="#483e37" />
-                                <TextBlock HorizontalAlignment="Center" FontWeight="Bold"
-                                           Text="{Binding CreatedAt.Month}" Foreground="#c8ab37" />
+                                <TextBlock HorizontalAlignment="Center" FontWeight="Bold" Foreground="#483e37"
+                                           Text="{Binding CreatedAt.Day}" />
+                                <TextBlock HorizontalAlignment="Center" FontWeight="Bold" Foreground="#c8ab37"
+                                           Text="{Binding CreatedAt.Month}" />
                             </StackPanel>
                         </DockPanel>
-                        <Grid DockPanel.Dock="Right" Width="55" Height="55">
-                            <TextBlock VerticalAlignment="Center" FontWeight="Bold"
-                                       HorizontalAlignment="Center" Text="{Binding Value}"
-                                       Foreground="#aa4400" />
+                        <Grid Width="55" Height="55" DockPanel.Dock="Right">
+                            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"
+                                       Foreground="#aa4400"
+                                       Text="{Binding Value}" />
                         </Grid>
-                        <TextBlock VerticalAlignment="Center" FontWeight="Bold" Text="{Binding Description}"
-                                   Foreground="#483e37" />
+                        <TextBlock VerticalAlignment="Center" FontWeight="Bold" Foreground="#483e37"
+                                   Text="{Binding Description}" />
                     </DockPanel>
 
                 </DataTemplate>

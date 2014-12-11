@@ -1,13 +1,13 @@
-﻿using System;
+﻿using HomeIncClient.Core;
+using System;
 using System.Windows.Input;
-using HomeIncClient.Core;
 
 namespace HomeIncClient.Helpers
 {
     public class RouteCommand : ICommand
     {
-        private readonly string _routingPath;
         private readonly ViewModel _customViewModel;
+        private readonly string _routingPath;
 
         public RouteCommand(string path, ViewModel customViewModel = null)
         {

@@ -1,14 +1,13 @@
-﻿
-namespace HomeIncClient.Views.Transactions
+﻿namespace HomeIncClient.Views.Transactions
 {
-	/// <summary>
-	///     Interaction logic for TransactionNew.xaml
-	/// </summary>
-	public partial class TransactionsNew
-	{
+    /// <summary>
+    ///     Interaction logic for TransactionNew.xaml
+    /// </summary>
+    public partial class TransactionsNew
+    {
         public TransactionsNew()
-		{
-			InitializeComponent();
-		}
-	}
+        {
+            InitializeComponent();
+        }
+    }
 }

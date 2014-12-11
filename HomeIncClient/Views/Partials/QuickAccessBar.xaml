@@ -1,13 +1,12 @@
 ﻿<UserControl x:Class="HomeIncClient.Views.Partials.QuickAccessBar"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             >
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <StackPanel Orientation="Horizontal">
         <Button Command="{Binding RouteRootCommand}">Home</Button>
-        <Button Command="{Binding RouteRootCommand}" Margin="5,0,0,0">Transactions</Button>
-        <Button Command="{Binding RouteRootCommand}" Margin="5,0,0,0">Categories</Button>
-        <Button Command="{Binding RouteRootCommand}" Margin="5,0,0,0">Statistics</Button>
-        <Button Command="{Binding RouteRootCommand}" Margin="5,0,0,0">Settings</Button>
-        <Button Command="{Binding RouteRootCommand}" Margin="5,0,0,0">About</Button>
+        <Button Margin="5,0,0,0" Command="{Binding RouteRootCommand}">Transactions</Button>
+        <Button Margin="5,0,0,0" Command="{Binding RouteRootCommand}">Categories</Button>
+        <Button Margin="5,0,0,0" Command="{Binding RouteRootCommand}">Statistics</Button>
+        <Button Margin="5,0,0,0" Command="{Binding RouteRootCommand}">Settings</Button>
+        <Button Margin="5,0,0,0" Command="{Binding RouteRootCommand}">About</Button>
     </StackPanel>
 </UserControl>

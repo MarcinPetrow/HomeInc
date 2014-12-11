@@ -2,7 +2,7 @@
 
 namespace HomeIncClient.ViewModels
 {
-    class CategoriesViewModel: ViewModel
+    internal class CategoriesViewModel : ViewModel
     {
     }
 }

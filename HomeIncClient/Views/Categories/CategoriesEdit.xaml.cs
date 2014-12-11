@@ -1,10 +1,9 @@
-﻿
-namespace HomeIncClient.Views.Categories
+﻿namespace HomeIncClient.Views.Categories
 {
     /// <summary>
-    /// Interaction logic for CategoriesEdit.xaml
+    ///     Interaction logic for CategoriesEdit.xaml
     /// </summary>
-    public partial class CategoriesEdit 
+    public partial class CategoriesEdit
     {
         public CategoriesEdit()
         {

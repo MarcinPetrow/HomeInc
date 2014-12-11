@@ -30,7 +30,6 @@ namespace HomeIncClient.Core
             return _context.Set<TEntity>().Find(id);
         }
 
-
         public void Update(TEntity entity)
         {
             if (entity.Id == 0) return;
@@ -38,6 +37,16 @@ namespace HomeIncClient.Core
             var currentEntity = _context.Set<TEntity>().Find(entity.Id);
             _context.Entry(currentEntity).CurrentValues.SetValues(entity);
             _context.SaveChanges();
+        }
+
+        public void Delete(TEntity entity)
+        {
+            _context.Set<TEntity>().Remove(entity);
+        }
+
+        public void Dispose()
+        {
+            _context.Dispose();
         }
 
         public void UpdateOrCreate(TEntity entity)
@@ -54,16 +63,6 @@ namespace HomeIncClient.Core
             }
 
             _context.SaveChanges();
-        }
-
-        public void Delete(TEntity entity)
-        {
-            _context.Set<TEntity>().Remove(entity);
-        }
-
-        public void Dispose()
-        {
-            _context.Dispose();
         }
 
         public List<TEntity> All()

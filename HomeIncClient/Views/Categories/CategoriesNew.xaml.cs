@@ -1,9 +1,9 @@
 ﻿namespace HomeIncClient.Views.Categories
 {
     /// <summary>
-    /// Interaction logic for CategoriesNew.xaml
+    ///     Interaction logic for CategoriesNew.xaml
     /// </summary>
-    public partial class CategoriesNew 
+    public partial class CategoriesNew
     {
         public CategoriesNew()
         {

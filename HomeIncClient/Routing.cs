@@ -6,16 +6,48 @@ namespace HomeIncClient
 {
     public class RouteChangeArgs : EventArgs
     {
-        public View RouteView { get; set; }
-
         public RouteChangeArgs(View view)
         {
             RouteView = view;
         }
+
+        public View RouteView { get; set; }
     }
 
     public class Routing
     {
+        public RoutingList List { get; set; }
+        public event EventHandler<RouteChangeArgs> OnRoute;
+
+        public void RouteRoot()
+        {
+            Route(RoutePaths.Root);
+        }
+
+        public void RaiseRoteChange(View routeView)
+        {
+            if (OnRoute != null)
+            {
+                OnRoute(this, new RouteChangeArgs(routeView));
+            }
+        }
+
+        public void Route(string id)
+        {
+            var newView = List.GetRouteView(id);
+            if (newView == null)
+            {
+                return;
+            }
+
+            if (newView.DataContext != null && newView.DataContext is ViewModel)
+            {
+                ((ViewModel) newView.DataContext).Prepare();
+            }
+
+            RaiseRoteChange(newView);
+        }
+
         #region Singleton
 
         private static Routing _instance;
@@ -38,37 +70,5 @@ namespace HomeIncClient
         }
 
         #endregion
-
-        public RoutingList List { get; set; }
-
-        public event EventHandler<RouteChangeArgs> OnRoute;
-       
-        public void RouteRoot()
-        {
-            Route(RoutePaths.Root);
-        }
-
-        public void RaiseRoteChange(View routeView)
-        {
-            if (OnRoute != null) { 
-                OnRoute(this, new RouteChangeArgs(routeView));
-            }
-        }
-
-        public void Route(string id)
-        {
-            var newView = List.GetRouteView(id);
-            if (newView == null)
-            {
-                return;
-            }
-
-            if (newView.DataContext != null && newView.DataContext is ViewModel)
-            {
-                ((ViewModel)newView.DataContext).Prepare();
-            }
-
-            RaiseRoteChange(newView);
-        }
     }
 }
