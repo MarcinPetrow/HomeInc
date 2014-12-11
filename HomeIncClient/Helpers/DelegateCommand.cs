@@ -26,6 +26,14 @@ namespace HomeIncClient.Helpers
         {
             Routing.Instance.Route(_routingPath, _customViewModel);
         }
+
+        protected virtual void OnCanExecuteChanged()
+        {
+            if (CanExecuteChanged != null)
+            {
+                CanExecuteChanged(this, EventArgs.Empty);
+            }
+        }
     }
 
     public class DelegateCommand : ICommand
