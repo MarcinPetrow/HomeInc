@@ -54,11 +54,15 @@
                             </TextBlock>
                         </StackPanel>
                     </DockPanel>
-                    <partials:QuickAccessBar DockPanel.Dock="Bottom" Height="30"></partials:QuickAccessBar>
+
+                    <Border Margin="3" CornerRadius="{StaticResource ControlCornerRadius}" BorderThickness="1" BorderBrush="{StaticResource ControlBorderColor}">
+                        <partials:QuickAccessBar Margin="3" DockPanel.Dock="Bottom"></partials:QuickAccessBar>
+                        </Border>
                 </DockPanel>
 
-
-                <ContentControl Content="{Binding CurrentView}" />
+                <Border Margin="3" CornerRadius="{StaticResource ControlCornerRadius}" BorderThickness="1" BorderBrush="{StaticResource ControlBorderColor}">
+                    <ContentControl Margin="3" Content="{Binding CurrentView}" />
+                </Border>
             </DockPanel>
 		</Border>
 	</DockPanel>

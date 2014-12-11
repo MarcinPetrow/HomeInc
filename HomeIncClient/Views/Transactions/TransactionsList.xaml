@@ -5,10 +5,10 @@
          xmlns:models="clr-namespace:HomeIncClient.Models">
     <DockPanel>
         <Button DockPanel.Dock="Bottom" Command="{Binding RouteNewCommand}" CommandParameter="/tansaction/new"
-                Margin="2,10,2,10">
+                Margin="0,10,0,0">
             Add new
         </Button>
-        <ListView ItemsSource="{Binding Transactions}" Margin="2,10,2,10">
+        <ListView ItemsSource="{Binding Transactions}">
 
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
