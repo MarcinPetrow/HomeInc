@@ -24,7 +24,7 @@ namespace HomeIncClient.Helpers
 
         public void Execute(object parameter)
         {
-            Routing.Instance.Route(_routingPath);
+            Routing.Instance.Route(_routingPath, _customViewModel);
         }
     }
 

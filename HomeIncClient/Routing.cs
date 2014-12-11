@@ -1,6 +1,6 @@
-﻿using System;
-using HomeIncClient.Core;
+﻿using HomeIncClient.Core;
 using HomeIncClient.Core.UI;
+using System;
 
 namespace HomeIncClient
 {
@@ -32,9 +32,9 @@ namespace HomeIncClient
             }
         }
 
-        public void Route(string id)
+        public void Route(string id, ViewModel customViewModel = null)
         {
-            var newView = List.GetRouteView(id);
+            var newView = List.GetRouteView(id, customViewModel);
             if (newView == null)
             {
                 return;
@@ -42,7 +42,7 @@ namespace HomeIncClient
 
             if (newView.DataContext != null && newView.DataContext is ViewModel)
             {
-                ((ViewModel) newView.DataContext).Prepare();
+                ((ViewModel)newView.DataContext).Prepare();
             }
 
             RaiseRoteChange(newView);
