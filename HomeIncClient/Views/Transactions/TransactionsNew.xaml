@@ -1,19 +1,15 @@
 ﻿<ui:View x:Class="HomeIncClient.Views.Transactions.TransactionsNew"
          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-         xmlns:ui="clr-namespace:HomeIncClient.Core.UI"
-         d:DesignHeight="300"
-         d:DesignWidth="300"
-         mc:Ignorable="d">
-	<StackPanel Background="#312a26">
-		<StackPanel Margin="10">
-			<TextBlock Foreground="#88aa00">Description</TextBlock>
+         xmlns:ui="clr-namespace:HomeIncClient.Core.UI">
+	<StackPanel>
+		<StackPanel>
+			<TextBlock>Description</TextBlock>
 			<TextBox Margin="0,5,0,0" Text="{Binding Current.Description}" />
-			<TextBlock Margin="0,10,0,0" Foreground="#88aa00">Value</TextBlock>
+			<TextBlock Margin="0,10,0,0">Value</TextBlock>
 			<TextBox Margin="0,5,0,0" Text="{Binding Current.Value}" />
 
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
 			<Button Width="120"
 			        Margin="0,10,0,0"
 			        HorizontalAlignment="Right"
@@ -21,10 +17,11 @@
 			        Content="Save" />
 
 			<Button Width="120"
-			        Margin="0,10,0,0"
+			        Margin="10,10,0,0"
 			        HorizontalAlignment="Right"
 			        Command="{Binding RouteListCommand}"
 			        Content="Cancel" />
-		</StackPanel>
+            </StackPanel>
+        </StackPanel>
 	</StackPanel>
 </ui:View>
