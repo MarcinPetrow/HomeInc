@@ -4,17 +4,24 @@
     <Style TargetType="Button">
         <Setter Property="Height" Value="30"/>
         <Setter Property="MinWidth" Value="120"/>
-        <Setter Property="Background" Value="LightBlue"></Setter>
+        <Setter Property="Background" Value="{StaticResource ControlBackgroundColor}"></Setter>
 
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <Border x:Name="MainBorder" Background="{TemplateBinding Background}" CornerRadius="3" BorderThickness="1" BorderBrush="Black">
-                        <ContentPresenter x:Name="ContentPresenter" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Border x:Name="MainBorder" Background="{TemplateBinding Background}" CornerRadius="{StaticResource ControlCornerRadius}" BorderThickness="1" BorderBrush="{StaticResource ControlBorderColor}">
+                        <ContentPresenter TextBlock.Foreground="{StaticResource ControlForegroundColor}"  x:Name="ContentPresenter" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="LightSkyBlue" TargetName="MainBorder"></Setter>
+                            <Setter Property="Background" Value="{StaticResource ControlHighlightedBackgroundColor}" TargetName="MainBorder"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource ControlHighlightedBorderColor}" TargetName="MainBorder"/>
+                            <Setter Property="TextBlock.Foreground" Value="{StaticResource ControlHighlightedForegroundColor}" TargetName="ContentPresenter"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{StaticResource ControlDisabledBackgroundColor}" TargetName="MainBorder"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource ControlDisabledBorderColor}" TargetName="MainBorder"/>
+                            <Setter Property="TextBlock.Foreground" Value="{StaticResource ControlDisabledForegroundColor}" TargetName="ContentPresenter"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

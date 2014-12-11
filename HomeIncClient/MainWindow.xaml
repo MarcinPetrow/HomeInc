@@ -12,15 +12,7 @@
         MouseDown="DragWindow"
         ResizeMode="CanResizeWithGrip"
         WindowStyle="None">
-    <Window.Resources>
-
-        <SolidColorBrush x:Key="MainBorderColor" Color="#FF506263"></SolidColorBrush>
-        <SolidColorBrush x:Key="HeaderBackgroundColor" Color="#FF235770"></SolidColorBrush>
-        <SolidColorBrush x:Key="BackgroundColor" Color="White"></SolidColorBrush>
-        
-    </Window.Resources>
-
-	<DockPanel>
+  <DockPanel>
 		<Border Height="20"
 		        Background="{StaticResource MainBorderColor}"
 		        DockPanel.Dock="Top" />
@@ -39,12 +31,12 @@
 					        DockPanel.Dock="Right">
                             <Image Margin="12"
 						       VerticalAlignment="Center"
-						       Source="Resources\logo.png" />
+						       Source="Assets/Resources/logo.png" />
                         </Button>
                         <Image Margin="15"
 					       VerticalAlignment="Center"
 					       DockPanel.Dock="Left"
-					       Source="Resources\cs-menu-icon.png" />
+					       Source="Assets/Resources/cs-menu-icon.png" />
                         <StackPanel Margin="10,0,0,0"
 					            VerticalAlignment="Center"
 					            Orientation="Horizontal">
@@ -64,10 +56,10 @@
                     </DockPanel>
                     <partials:QuickAccessBar DockPanel.Dock="Bottom" Height="30"></partials:QuickAccessBar>
                 </DockPanel>
-               
 
-				<ContentControl Content="{Binding CurrentView}" />
-			</DockPanel>
+
+                <ContentControl Content="{Binding CurrentView}" />
+            </DockPanel>
 		</Border>
 	</DockPanel>
 </Window>
