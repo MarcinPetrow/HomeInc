@@ -96,6 +96,9 @@
     <Compile Include="Views\Categories\CategoriesNew.xaml.cs">
       <DependentUpon>CategoriesNew.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Partials\QuickAccessBar.xaml.cs">
+      <DependentUpon>QuickAccessBar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Transactions\TransactionsNew.xaml.cs">
       <DependentUpon>TransactionsNew.xaml</DependentUpon>
     </Compile>
@@ -105,6 +108,14 @@
     <Compile Include="Views\Transactions\TransactionsList.xaml.cs">
       <DependentUpon>TransactionsList.xaml</DependentUpon>
     </Compile>
+    <Page Include="Assets\Resources\ControlTemplates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Assets\Styles\ControlTemplates\Button.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -135,6 +146,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Categories\CategoriesNew.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Partials\QuickAccessBar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -182,10 +197,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\logo.png" />
+    <Resource Include="Assets\Resources\logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\cs-menu-icon.png" />
+    <Resource Include="Assets\Resources\cs-menu-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

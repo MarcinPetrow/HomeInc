@@ -2,6 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:models="clr-namespace:HomeIncClient.Models"
+        xmlns:partials="clr-namespace:HomeIncClient.Views.Partials"
         Title="MainWindow"
         Width="600"
         Height="600"
@@ -11,50 +12,59 @@
         MouseDown="DragWindow"
         ResizeMode="CanResizeWithGrip"
         WindowStyle="None">
+    <Window.Resources>
+
+        <SolidColorBrush x:Key="MainBorderColor" Color="#FF506263"></SolidColorBrush>
+        <SolidColorBrush x:Key="HeaderBackgroundColor" Color="#FF235770"></SolidColorBrush>
+        <SolidColorBrush x:Key="BackgroundColor" Color="White"></SolidColorBrush>
+        
+    </Window.Resources>
 
 	<DockPanel>
 		<Border Height="20"
-		        Background="#312a26"
+		        Background="{StaticResource MainBorderColor}"
 		        DockPanel.Dock="Top" />
 		<Border Height="20"
-		        Background="#312a26"
+		        Background="{StaticResource MainBorderColor}"
 		        DockPanel.Dock="Bottom" />
-		<Border BorderBrush="#312a26" BorderThickness="2">
-			<DockPanel x:Name="WindowContent" Background="#1a1a1a">
-				<DockPanel Height="50"
-				           Background="#38362b"
+        <Border BorderBrush="{StaticResource MainBorderColor}" BorderThickness="2">
+            <DockPanel x:Name="WindowContent" Background="{StaticResource BackgroundColor}">
+				<DockPanel DockPanel.Dock="Top">
+                    <DockPanel Height="50"
+				           Background="{StaticResource HeaderBackgroundColor}"
 				           DockPanel.Dock="Top">
-					<Button Background="Transparent"
+                        <Button Background="Transparent"
 					        BorderThickness="0"
 					        Command="{Binding RouteAboutCommand}"
 					        DockPanel.Dock="Right">
-						<Image Margin="12"
+                            <Image Margin="12"
 						       VerticalAlignment="Center"
 						       Source="Resources\logo.png" />
-					</Button>
-
-					<Image Margin="15"
+                        </Button>
+                        <Image Margin="15"
 					       VerticalAlignment="Center"
 					       DockPanel.Dock="Left"
 					       Source="Resources\cs-menu-icon.png" />
-
-					<StackPanel Margin="10,0,0,0"
+                        <StackPanel Margin="10,0,0,0"
 					            VerticalAlignment="Center"
 					            Orientation="Horizontal">
-						<TextBlock FontFamily="Roboto"
+                            <TextBlock FontFamily="Roboto"
 						           FontSize="30"
 						           FontWeight="Bold"
-						           Foreground="#88aa00">
+						           Foreground="#FF0093AA">
 							Home
-						</TextBlock>
-						<TextBlock FontFamily="Roboto"
+                            </TextBlock>
+                            <TextBlock FontFamily="Roboto"
 						           FontSize="30"
 						           FontWeight="Bold"
-						           Foreground="#c8ab37">
+						           Foreground="#FFA4DFE2">
 							Inc
-						</TextBlock>
-					</StackPanel>
-				</DockPanel>
+                            </TextBlock>
+                        </StackPanel>
+                    </DockPanel>
+                    <partials:QuickAccessBar DockPanel.Dock="Bottom" Height="30"></partials:QuickAccessBar>
+                </DockPanel>
+               
 
 				<ContentControl Content="{Binding CurrentView}" />
 			</DockPanel>
