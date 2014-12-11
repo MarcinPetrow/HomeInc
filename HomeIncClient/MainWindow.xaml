@@ -25,18 +25,6 @@
                     <DockPanel Height="50"
 				           Background="{StaticResource HeaderBackgroundColor}"
 				           DockPanel.Dock="Top">
-                        <Button Background="Transparent"
-					        BorderThickness="0"
-					        Command="{Binding RouteAboutCommand}"
-					        DockPanel.Dock="Right">
-                            <Image Margin="12"
-						       VerticalAlignment="Center"
-						       Source="Assets/Resources/logo.png" />
-                        </Button>
-                        <Image Margin="15"
-					       VerticalAlignment="Center"
-					       DockPanel.Dock="Left"
-					       Source="Assets/Resources/cs-menu-icon.png" />
                         <StackPanel Margin="10,0,0,0"
 					            VerticalAlignment="Center"
 					            Orientation="Horizontal">
@@ -55,12 +43,12 @@
                         </StackPanel>
                     </DockPanel>
 
-                    <Border Margin="3" CornerRadius="{StaticResource ControlCornerRadius}" BorderThickness="1" BorderBrush="{StaticResource ControlBorderColor}">
+                    <Border Style="{StaticResource DefaultContentBorder}">
                         <partials:QuickAccessBar Margin="3" DockPanel.Dock="Bottom"></partials:QuickAccessBar>
                         </Border>
                 </DockPanel>
 
-                <Border Margin="3" CornerRadius="{StaticResource ControlCornerRadius}" BorderThickness="1" BorderBrush="{StaticResource ControlBorderColor}">
+                <Border Style="{StaticResource DefaultContentBorder}">
                     <ContentControl Margin="3" Content="{Binding CurrentView}" />
                 </Border>
             </DockPanel>
