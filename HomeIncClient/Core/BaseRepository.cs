@@ -1,8 +1,8 @@
-﻿using System;
+﻿using HomeIncClient.Core.Store;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using HomeIncClient.Core.Store;
 
 namespace HomeIncClient.Core
 {
@@ -42,6 +42,7 @@ namespace HomeIncClient.Core
         public void Delete(TEntity entity)
         {
             _context.Set<TEntity>().Remove(entity);
+            _context.SaveChanges();
         }
 
         public void Dispose()
