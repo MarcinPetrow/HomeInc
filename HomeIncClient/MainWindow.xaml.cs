@@ -56,14 +56,15 @@ namespace HomeIncClient
         public void AddRoutingPaths()
         {
             var routingList = Routing.Instance.List;
-            routingList.AddRoute(RoutePaths.Root, typeof (TransactionsList), typeof (TransactionsViewModel));
-            routingList.AddRoute(RoutePaths.NewTransactionPath, typeof (TransactionsNew), typeof (TransactionsViewModel));
+            routingList.AddRoute(RoutePaths.Root, typeof(TransactionsList), typeof(TransactionsViewModel));
+            routingList.AddRoute(RoutePaths.NewTransactionPath, typeof(TransactionsNew), typeof(TransactionsViewModel));
+            routingList.AddRoute(RoutePaths.EditTransactionPath, typeof(TransactionsEdit), typeof(TransactionsViewModel));
 
-            routingList.AddRoute(RoutePaths.CategoriesPath, typeof (CategoriesList), typeof (CategoriesViewModel));
-            routingList.AddRoute(RoutePaths.NewCategoryPath, typeof (CategoriesNew), typeof (CategoriesViewModel));
-            routingList.AddRoute(RoutePaths.EditCategoryPath, typeof (CategoriesEdit), typeof (CategoriesViewModel));
+            routingList.AddRoute(RoutePaths.CategoriesPath, typeof(CategoriesList), typeof(CategoriesViewModel));
+            routingList.AddRoute(RoutePaths.NewCategoryPath, typeof(CategoriesNew), typeof(CategoriesViewModel));
+            routingList.AddRoute(RoutePaths.EditCategoryPath, typeof(CategoriesEdit), typeof(CategoriesViewModel));
 
-            routingList.AddRoute(RoutePaths.AboutPath, typeof (About), null);
+            routingList.AddRoute(RoutePaths.AboutPath, typeof(About), null);
         }
 
         #region Daraggable
