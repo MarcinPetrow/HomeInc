@@ -15,6 +15,7 @@ namespace HomeIncClient.ViewModels
         private ICommand _routeEditCommand;
         private ICommand _deleteItemCommand;
         private ICommand _saveCurrentCommand;
+        private ICommand _updateCurrentCommand;
         private ObservableCollection<Transaction> _transactions;
 
         public ICommand RouteNewCommand
@@ -26,6 +27,12 @@ namespace HomeIncClient.ViewModels
         {
             get { return _routeEditCommand ?? (_routeEditCommand = new DelegateCommand<Transaction>(RouteEditCommandExecute)); }
         }
+
+        public ICommand UpdateCurrentCommand
+        {
+            get { return _updateCurrentCommand ?? (_updateCurrentCommand = new DelegateCommand(UpdateCurrentCommandExecute)); }
+        }
+
 
         public ICommand DeleteItemCommand
         {
@@ -65,36 +72,12 @@ namespace HomeIncClient.ViewModels
             }
         }
 
-        public void SaveCurrentCommandExecute()
-        {
-            using (var repository = new TransactionsRepository())
-            {
-                repository.UpdateOrCreate(Current);
-                Current = new Transaction();
-                Routing.Instance.Route(RoutePaths.TransactionsPath);
-
-                MessageBox.Show("New transaction added properly", "Success", MessageBoxButton.OK,
-                    MessageBoxImage.Information);
-            }
-        }
-
         public override void Prepare()
         {
             using (var repository = new TransactionsRepository())
             {
                 Transactions = new ObservableCollection<Transaction>(repository.All());
             }
-        }
-
-        #region Commands implementations
-
-        public void RouteEditCommandExecute(Transaction item)
-        {
-            var viewModel = new TransactionsViewModel
-            {
-                Current = item
-            };
-            Routing.Instance.Route(RoutePaths.EditTransactionPath, viewModel);
         }
 
         private void DeleteItem(Transaction item)
@@ -112,6 +95,44 @@ namespace HomeIncClient.ViewModels
             {
                 Transactions.Remove(item);
             }
+        }
+
+        private void PersistCurrentItem()
+        {
+            using (var repository = new TransactionsRepository())
+            {
+                repository.UpdateOrCreate(Current);
+                Current = new Transaction();
+            }
+        }
+
+        #region Commands implementations
+
+        public void SaveCurrentCommandExecute()
+        {
+            PersistCurrentItem();
+            Routing.Instance.Route(RoutePaths.TransactionsPath);
+
+            MessageBox.Show("New transaction added properly", "Success", MessageBoxButton.OK,
+                MessageBoxImage.Information);
+        }
+
+        public void UpdateCurrentCommandExecute()
+        {
+            PersistCurrentItem();
+            Routing.Instance.Route(RoutePaths.TransactionsPath);
+
+            MessageBox.Show("Transaction updated properly", "Success", MessageBoxButton.OK,
+                MessageBoxImage.Information);
+        }
+
+        public void RouteEditCommandExecute(Transaction item)
+        {
+            var viewModel = new TransactionsViewModel
+            {
+                Current = item
+            };
+            Routing.Instance.Route(RoutePaths.EditTransactionPath, viewModel);
         }
 
         public void DeleteItemCommandExecute(Transaction item)

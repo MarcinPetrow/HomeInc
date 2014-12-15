@@ -8,7 +8,7 @@
 
             <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
                 <Button Width="120" Margin="0,10,0,0" HorizontalAlignment="Right"
-                        Command="{Binding SaveCurrentCommand}"
+                        Command="{Binding UpdateCurrentCommand}"
                         Content="Update" />
 
                 <Button Width="120" Margin="10,10,0,0" HorizontalAlignment="Right"
