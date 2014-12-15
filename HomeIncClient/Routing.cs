@@ -34,10 +34,15 @@ namespace HomeIncClient
 
         public void Route(string id, ViewModel customViewModel = null)
         {
-            var newView = List.GetRouteView(id, customViewModel);
+            var newView = List.GetRouteView(id);
             if (newView == null)
             {
                 return;
+            }
+
+            if (customViewModel != null && customViewModel is ViewModel)
+            {
+                newView.DataContext = customViewModel;
             }
 
             if (newView.DataContext != null && newView.DataContext is ViewModel)
