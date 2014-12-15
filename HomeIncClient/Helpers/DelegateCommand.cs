@@ -73,4 +73,42 @@ namespace HomeIncClient.Helpers
             }
         }
     }
+
+    public class DelegateCommand<T> : ICommand
+    {
+        private readonly Predicate<object> _canExecute;
+        private readonly Action<T> _execute;
+
+        public DelegateCommand(Action<T> execute)
+            : this(execute, null)
+        {
+        }
+
+        public DelegateCommand(Action<T> execute,
+            Predicate<object> canExecute)
+        {
+            _execute = execute;
+            _canExecute = canExecute;
+        }
+
+        public event EventHandler CanExecuteChanged;
+
+        public bool CanExecute(object parameter)
+        {
+            return _canExecute == null || _canExecute(parameter);
+        }
+
+        public void Execute(object parameter)
+        {
+            _execute((T)parameter);
+        }
+
+        public void RaiseCanExecuteChanged()
+        {
+            if (CanExecuteChanged != null)
+            {
+                CanExecuteChanged(this, EventArgs.Empty);
+            }
+        }
+    }
 }
