@@ -1,0 +1,16 @@
+﻿<Button x:Class="HomeIncClient.Views.Controls.IconButton" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Width="{Binding Size,
+                        FallbackValue=32}"
+        Height="{Binding Size,
+                         FallbackValue=32}">
+    <Border>
+        <Rectangle Width="{Binding IconSize,
+                                   FallbackValue=32}"
+                   Height="{Binding IconSize,
+                                    FallbackValue=32}"
+                   Fill="{Binding IconColor,
+                                  FallbackValue=Black}"
+                   OpacityMask="{StaticResource fa-pencil-square-o}" />
+    </Border>
+
+</Button>

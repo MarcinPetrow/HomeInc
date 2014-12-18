@@ -96,6 +96,9 @@
     <Compile Include="Views\Categories\CategoriesNew.xaml.cs">
       <DependentUpon>CategoriesNew.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Controls\IconButton.xaml.cs">
+      <DependentUpon>IconButton.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Partials\QuickAccessBar.xaml.cs">
       <DependentUpon>QuickAccessBar.xaml</DependentUpon>
     </Compile>
@@ -108,6 +111,10 @@
     <Compile Include="Views\Transactions\TransactionsList.xaml.cs">
       <DependentUpon>TransactionsList.xaml</DependentUpon>
     </Compile>
+    <Page Include="Assets\Icons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Assets\Resources\ControlTemplates.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -154,6 +161,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Categories\CategoriesNew.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Controls\IconButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -209,6 +220,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Resources\cs-menu-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Icons\fa-trash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Icons\fa-pencil-square-o.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
