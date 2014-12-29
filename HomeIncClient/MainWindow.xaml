@@ -1,18 +1,12 @@
 ﻿<Window x:Class="HomeIncClient.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:partials="clr-namespace:HomeIncClient.Views.Partials" Title="MainWindow" Width="600" Height="600" MinWidth="300" MinHeight="600"
         Style="{StaticResource DefaultWindowStyle}">
     <DockPanel>
-        <Border BorderBrush="{StaticResource MainBorderColor}" BorderThickness="2">
-            <DockPanel x:Name="WindowContent" Background="{StaticResource BackgroundColor}">
-                <DockPanel DockPanel.Dock="Top">
-                    <Border Style="{StaticResource DefaultContentBorder}">
-                        <partials:QuickAccessBar Margin="3" DockPanel.Dock="Bottom" />
-                    </Border>
-                </DockPanel>
-
-                <Border Style="{StaticResource DefaultContentBorder}">
-                    <ContentControl Margin="3" Content="{Binding CurrentView}" />
-                </Border>
+        <DockPanel x:Name="WindowContent" Background="{StaticResource BackgroundColor}">
+            <DockPanel DockPanel.Dock="Top">
+                <partials:QuickAccessBar Margin="3" DockPanel.Dock="Bottom" />
             </DockPanel>
-        </Border>
+
+            <ContentControl Margin="3" Content="{Binding CurrentView}" />
+        </DockPanel>
     </DockPanel>
 </Window>
