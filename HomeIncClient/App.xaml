@@ -5,8 +5,7 @@
                 <ResourceDictionary Source="Assets/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Assets/Icons.xaml" />
                 <ResourceDictionary Source="Assets/Styles/VaroiusStyles.xaml" />
-
-                <ResourceDictionary Source="Assets/Resources/ControlTemplates.xaml" />
+                <ResourceDictionary Source="Assets/Styles/ControlTemplates.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
