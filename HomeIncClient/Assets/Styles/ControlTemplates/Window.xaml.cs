@@ -5,11 +5,10 @@ using System.Windows.Media;
 namespace HomeIncClient.Assets.Styles.ControlTemplates
 {
     /// <summary>
-    /// Interaction logic for Window.xaml
+    ///     Interaction logic for Window.xaml
     /// </summary>
     public partial class Window
     {
-
         public static System.Windows.Window GetParentWindow(DependencyObject child)
         {
             var parentObject = VisualTreeHelper.GetParent(child);

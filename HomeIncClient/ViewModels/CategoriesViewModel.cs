@@ -1,8 +1,8 @@
-﻿using HomeIncClient.Core;
+﻿using System.Collections.Generic;
+using System.Linq;
+using HomeIncClient.Core;
 using HomeIncClient.Models;
 using HomeIncClient.Repositories;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace HomeIncClient.ViewModels
 {
@@ -38,7 +38,7 @@ namespace HomeIncClient.ViewModels
                 RootCategory = repository.GetSet().Include("SubCategories").First(x => x.Name == "Root");
                 RootCategory.SubCategories.First().SubCategories = new List<Category>
                 {
-                    new Category()
+                    new Category
                     {
                         Name = "A",
                         SubCategories = new List<Category>
@@ -49,14 +49,14 @@ namespace HomeIncClient.ViewModels
                             }
                         }
                     },
-                    new Category()
+                    new Category
                     {
                         Name = "B"
                     },
-                    new Category()
+                    new Category
                     {
                         Name = "C"
-                    },
+                    }
                 };
                 OnPropertyChanged("RootCategory");
             }

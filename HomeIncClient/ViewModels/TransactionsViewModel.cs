@@ -1,22 +1,22 @@
-﻿using HomeIncClient.Core;
+﻿using System.Collections.ObjectModel;
+using System.Windows;
+using System.Windows.Input;
+using HomeIncClient.Core;
 using HomeIncClient.Helpers;
 using HomeIncClient.Models;
 using HomeIncClient.Repositories;
-using System.Collections.ObjectModel;
-using System.Windows;
-using System.Windows.Input;
 
 namespace HomeIncClient.ViewModels
 {
     public class TransactionsViewModel : ViewModel
     {
         private Transaction _current;
-        private ICommand _routeNewCommand;
-        private ICommand _routeEditCommand;
         private ICommand _deleteItemCommand;
+        private ICommand _routeEditCommand;
+        private ICommand _routeNewCommand;
         private ICommand _saveCurrentCommand;
-        private ICommand _updateCurrentCommand;
         private ObservableCollection<Transaction> _transactions;
+        private ICommand _updateCurrentCommand;
 
         public ICommand RouteNewCommand
         {
@@ -25,18 +25,29 @@ namespace HomeIncClient.ViewModels
 
         public ICommand RouteEditCommand
         {
-            get { return _routeEditCommand ?? (_routeEditCommand = new DelegateCommand<Transaction>(RouteEditCommandExecute)); }
+            get
+            {
+                return _routeEditCommand ??
+                       (_routeEditCommand = new DelegateCommand<Transaction>(RouteEditCommandExecute));
+            }
         }
 
         public ICommand UpdateCurrentCommand
         {
-            get { return _updateCurrentCommand ?? (_updateCurrentCommand = new DelegateCommand(UpdateCurrentCommandExecute)); }
+            get
+            {
+                return _updateCurrentCommand ??
+                       (_updateCurrentCommand = new DelegateCommand(UpdateCurrentCommandExecute));
+            }
         }
-
 
         public ICommand DeleteItemCommand
         {
-            get { return _deleteItemCommand ?? (_deleteItemCommand = new DelegateCommand<Transaction>(DeleteItemCommandExecute)); }
+            get
+            {
+                return _deleteItemCommand ??
+                       (_deleteItemCommand = new DelegateCommand<Transaction>(DeleteItemCommandExecute));
+            }
         }
 
         public ICommand RouteListCommand
@@ -89,7 +100,6 @@ namespace HomeIncClient.ViewModels
                 {
                     repository.Delete(existingItem);
                 }
-
             }
             if (Transactions.Contains(item))
             {
@@ -139,6 +149,7 @@ namespace HomeIncClient.ViewModels
         {
             DeleteItem(item);
         }
+
         #endregion
     }
 }

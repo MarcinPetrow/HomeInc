@@ -1,6 +1,6 @@
-﻿using HomeIncClient.Core;
+﻿using System;
+using HomeIncClient.Core;
 using HomeIncClient.Core.UI;
-using System;
 
 namespace HomeIncClient
 {
@@ -47,7 +47,7 @@ namespace HomeIncClient
 
             if (newView.DataContext != null && newView.DataContext is ViewModel)
             {
-                ((ViewModel)newView.DataContext).Prepare();
+                ((ViewModel) newView.DataContext).Prepare();
             }
 
             RaiseRoteChange(newView);

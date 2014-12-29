@@ -1,8 +1,8 @@
-﻿using HomeIncClient.Core.Store;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using HomeIncClient.Core.Store;
 
 namespace HomeIncClient.Core
 {

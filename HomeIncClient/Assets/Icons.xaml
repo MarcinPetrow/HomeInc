@@ -1,4 +1,6 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <ImageBrush x:Key="fa-pencil-square-o" ImageSource="Icons/fa-pencil-square-o.png" RenderOptions.BitmapScalingMode="Fant" Stretch="UniformToFill"  />
+    <ImageBrush x:Key="fa-pencil-square-o" ImageSource="Icons/fa-pencil-square-o.png"
+                RenderOptions.BitmapScalingMode="Fant" Stretch="UniformToFill" />
 </ResourceDictionary>

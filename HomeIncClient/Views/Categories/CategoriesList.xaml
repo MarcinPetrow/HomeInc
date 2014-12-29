@@ -1,4 +1,6 @@
-﻿<ui:View x:Class="HomeIncClient.Views.Categories.CategoriesList" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:ui="clr-namespace:HomeIncClient.Core.UI">
+﻿<ui:View x:Class="HomeIncClient.Views.Categories.CategoriesList"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:ui="clr-namespace:HomeIncClient.Core.UI">
     <Grid>
         <TreeView ItemsSource="{Binding RootCategory.SubCategories}">
             <TreeView.ItemTemplate>

@@ -1,6 +1,6 @@
-﻿using HomeIncClient.Core;
-using System;
+﻿using System;
 using System.Windows.Input;
+using HomeIncClient.Core;
 
 namespace HomeIncClient.Helpers
 {
@@ -100,7 +100,7 @@ namespace HomeIncClient.Helpers
 
         public void Execute(object parameter)
         {
-            _execute((T)parameter);
+            _execute((T) parameter);
         }
 
         public void RaiseCanExecuteChanged()
