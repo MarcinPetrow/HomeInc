@@ -1,5 +1,5 @@
-﻿using System.Data.Entity;
-using HomeIncClient.Models;
+﻿using HomeIncClient.Models;
+using System.Data.Entity;
 
 namespace HomeIncClient.Contexts
 {
@@ -8,6 +8,7 @@ namespace HomeIncClient.Contexts
         public DataContext()
             : base("name=DataContext")
         {
+
         }
 
         public virtual DbSet<User> Users { get; set; }

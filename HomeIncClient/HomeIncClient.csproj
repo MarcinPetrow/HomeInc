@@ -75,6 +75,7 @@
     </ApplicationDefinition>
     <Compile Include="Core\UI\View.cs" />
     <Compile Include="Helpers\DelegateCommand.cs" />
+    <Compile Include="Repositories\CategoriesRepository.cs" />
     <Compile Include="RoutePaths.cs" />
     <Compile Include="Routing.cs" />
     <Compile Include="RoutingList.cs" />

@@ -70,5 +70,10 @@ namespace HomeIncClient.Core
         {
             return _context.Set<TEntity>().ToList();
         }
+
+        public DbSet<TEntity> GetSet()
+        {
+            return _context.Set<TEntity>();
+        }
     }
 }
