@@ -1,43 +1,27 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <Style TargetType="Button">
-        <Setter Property="Height" Value="30" />
-        <Setter Property="MinWidth" Value="120" />
-        <Setter Property="Background" Value="{StaticResource ControlBackgroundColor}" />
-
+    <Style x:Key="BaseButtonStyle" TargetType="Button">
+        <Setter Property="TextBlock.Foreground" Value="{StaticResource ControlForegroundColor}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <Border x:Name="MainBorder"
-                            Background="{TemplateBinding Background}"
-                            BorderBrush="{StaticResource ControlBorderColor}"
-                            BorderThickness="1"
-                            CornerRadius="{StaticResource ControlCornerRadius}">
-                        <ContentPresenter x:Name="ContentPresenter" HorizontalAlignment="Center"
-                                          VerticalAlignment="Center"
-                                          TextBlock.Foreground="{StaticResource ControlForegroundColor}" />
+                    <Border x:Name="MainBorder" Background="{StaticResource ControlBackgroundColor}">
+                        <ContentPresenter Margin="10,5,10,5" HorizontalAlignment="Center" VerticalAlignment="Center" />
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="MainBorder" Property="Background"
-                                    Value="{StaticResource ControlHighlightedBackgroundColor}" />
-                            <Setter TargetName="MainBorder" Property="BorderBrush"
-                                    Value="{StaticResource ControlHighlightedBorderColor}" />
-                            <Setter TargetName="ContentPresenter" Property="TextBlock.Foreground"
-                                    Value="{StaticResource ControlHighlightedForegroundColor}" />
+                            <Setter TargetName="MainBorder" Property="Background" Value="{StaticResource ControlHighlightedBackgroundColor}" />
+                            <Setter TargetName="MainBorder" Property="BorderBrush" Value="{StaticResource ControlHighlightedBorderColor}" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter TargetName="MainBorder" Property="Background"
-                                    Value="{StaticResource ControlDisabledBackgroundColor}" />
-                            <Setter TargetName="MainBorder" Property="BorderBrush"
-                                    Value="{StaticResource ControlDisabledBorderColor}" />
-                            <Setter TargetName="ContentPresenter" Property="TextBlock.Foreground"
-                                    Value="{StaticResource ControlDisabledForegroundColor}" />
+                            <Setter TargetName="MainBorder" Property="Background" Value="{StaticResource ControlDisabledBackgroundColor}" />
+                            <Setter TargetName="MainBorder" Property="BorderBrush" Value="{StaticResource ControlDisabledBorderColor}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style BasedOn="{StaticResource BaseButtonStyle}" TargetType="Button" />
 </ResourceDictionary>
